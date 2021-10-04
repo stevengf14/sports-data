@@ -1,4 +1,4 @@
-import styles from '../../assets/styles/PageFooter.module.css';
+import styles from '../../assets/styles/pageFooter.module.css';
 
 export default function PageFooter (props) {
 
