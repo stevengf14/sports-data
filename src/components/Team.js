@@ -1,5 +1,3 @@
-import Image from 'next/image';
-
 export default function Team(props) {
     const { team, key } = props;
     return (
@@ -7,7 +5,7 @@ export default function Team(props) {
             <div className="card">
                 <div className="card-image">
                     <figure className="image is-4by3">
-                        <Image src={team.logo} alt={team.name} width={100} height={100} />
+                        <img src={team.logo} alt={team.name} width={100} height={100} />
                     </figure>
                 </div>
                 <div className="card-content">
