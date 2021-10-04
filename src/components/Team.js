@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export default function Team(props) {
     const { team, key } = props;
     return (
