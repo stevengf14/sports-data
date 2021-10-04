@@ -1,4 +1,4 @@
-import styles from '../../assets/styles/PageHeader.module.css';
+import styles from '../../assets/styles/pageHeader.module.css';
 
 export default function PageHeader (props) {
     const { title } = props;
