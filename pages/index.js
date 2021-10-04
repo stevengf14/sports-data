@@ -7,12 +7,24 @@ import Team from '../src/components/Team'
 import PageHeader from '../src/components/PageHeader'
 import PageFooter from '../src/components/PageFooter';
 
+import Global from '../assets/Global.js'
+
 export default function Home() {
 
+  const laLiga = Global.laLiga;
+  const premierLeague = Global.premierLeague;
+
   const [teams, setTeams] = useState([]);
-  const readTeams = () => {
-    console.debug('Descargando equipos');
-    axios.get('https://www.thesportsdb.com/api/v1/json/1/search_all_teams.php?l=Spanish%20La%20Liga')
+
+  const readTeams = (event) => {
+    console.debug('Downliading teams');
+    var league = '';
+    if(event.target.name === 'laLiga'){
+      league = laLiga;
+    } else if (event.target.name === 'premierLeague'){
+      league = premierLeague;
+    }
+    axios.get(league)
       .then(response => {
         if (response.status === 200) {
           const teamsResp = response.data.teams.map(team => {
@@ -39,26 +51,19 @@ export default function Home() {
       </Head>
 
       <main className="container">
-        <PageHeader title={'New Search'} />
-
-        <div className="columns">
+        <PageHeader title={'Teams'} />
+        <div className="columns pb-6">
           <div className="column is-half is-offset-one-quarter">
-            Here goes my app.
-
-            <button className="button is-primary" onClick={readTeams}>
+            <button className="button is-primary is-rounded mr-2" name="laLiga" onClick={readTeams}>
               La Liga
             </button>
-
-            <button className="button is-small is-danger is-rounded">
-              Mi Boton.
+            <button className="button is-danger is-rounded" name="premierLeague" onClick={readTeams}>
+              Premier League
             </button>
           </div>
         </div>
-
       </main>
-
       <div className="container">
-        <h2>Teams:</h2>
         <div className="columns is-multiline">
           {teams.map((team, index) => <Team team={team} key={`team-${index}`} />)}
         </div>
