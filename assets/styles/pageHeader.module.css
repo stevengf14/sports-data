@@ -1,0 +1,11 @@
+.header{
+    font-size: 4em;
+    color: red;
+    border-bottom: 1px solid red;
+    margin-bottom: 20px;
+}
+
+.subtitle {
+    color: #666666;
+    font-size: 0.8em;
+}
