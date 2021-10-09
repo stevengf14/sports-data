@@ -1,10 +1,11 @@
-import styles from '../../assets/styles/PageFooter.module.css';
+import styles from '../../assets/styles/pageFooter.module.css';
 
 export default function PageFooter (props) {
 
     return (
         <div className={styles.header}>
-            Pie de página
+            <strong>Teams Search</strong> by Steven Guamán
+            <p>Using an API from: <smal>https://www.thesportsdb.com</smal></p>
         </div>
     );
 }

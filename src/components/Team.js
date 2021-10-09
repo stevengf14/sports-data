@@ -12,13 +12,11 @@ export default function Team(props) {
                     <div className="media">
                         <div className="media-content">
                             <p className="title is-4">{team.name}</p>
-                            <p className="subtitle is-6">@johnsmith</p>
+                            <p className="subtitle is-6">@stevengf14</p>
                         </div>
                     </div>
-
                     <div className="content">
-                        Stadium: {team.stadium}
-                        <a href="#">#css</a> <a href="#">#responsive</a>
+                        <strong>Stadium:</strong> {team.stadium}
                     </div>
                 </div>
             </div>
